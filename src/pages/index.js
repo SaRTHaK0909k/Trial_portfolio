@@ -41,7 +41,7 @@ export default function Home() {
           </div>
             </div>
           </div>
-          <Skills/>
+         
         </Layout>
         <HireMe/>
         <div className="absolute right-8 bottom-8 inline-block w-24">
