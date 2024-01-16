@@ -9,6 +9,7 @@ import { useRef } from "react";
 import Skills from "@/components/Skills";
 import Education from "@/components/Education";
 import Experience from "@/components/Experience";
+import TransitionEffect from "@/components/TransitionEffect";
 
 const AnimatedNumbers = ({ value }) => {
   const ref = useRef(null);
@@ -40,6 +41,7 @@ const about = () => {
         <title>CodeCents | About Page</title>
         <meta name="description" content="any description"/>
       </Head>
+      <TransitionEffect/>
       <main className="flex w-full flex-col items-center justify-center dark:text-light ">
         <Layout className="pt-16">
           <AnimatedText text="Passion Fuels Purpose!" className="mb-16" />

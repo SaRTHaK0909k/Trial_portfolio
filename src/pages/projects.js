@@ -6,21 +6,24 @@ import Link from "next/link";
 import Head from "next/head";
 import React from "react";
 import project1 from "../../public/images/projects/crypto-screener-cover-image.jpg";
+import TransitionEffect from "@/components/TransitionEffect";
 
 const projects = () => {
   const FeaturedProject = ({ type, title, summary, img, link, github }) => {
     return (
-      <article className="w-full flex items-center justify-between relative rounded-3xl border border-solid border-dark bg-light shadow-2xl p-4 md:p-6 lg:p-8">
-      <div className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-3xl bg-dark" />
+      <article className="w-full flex items-center justify-between relative rounded-3xl border border-solid border-dark bg-light shadow-2xl p-4 md:p-6 lg:p-8 dark:bg-dark dark:border-light">
+      <div className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-3xl bg-dark dark:bg-light" />
       <Link
         href={link}
         className="w-1/2 cursor-pointer overflow-hidden rounded-lg"
         target="_blank"
       >
-        <Image src={img} alt={title} className="w-full h-auto rounded-lg" />
+        <Image src={img} alt={title} className="w-full h-auto rounded-lg" 
+        priority
+        sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 50vw"/>
       </Link>
       <div className="w-1/2 flex flex-col items-start justify-between pl-4 md:pl-6 lg:pl-8">
-        <span className="text-primary font-medium text-lg md:text-xl lg:text-2xl">
+        <span className="text-primary font-medium text-lg md:text-xl lg:text-2xl dark:text-primaryDark">
           {type}
         </span>
         <Link
@@ -58,7 +61,9 @@ const projects = () => {
           className="w-full cursor-pointer overflow-hidden rounded-lg mb-4"
           target="_blank"
         >
-          <Image src={img} alt={title} className="w-full h-auto" />
+          <Image src={img} alt={title} className="w-full h-auto" 
+          priority
+          sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 50vw"/>
         </Link>
         <div className="w-full flex flex-col items-start justify-between">
           <span className="text-primary font-medium text-xl">{type}</span>
@@ -67,7 +72,7 @@ const projects = () => {
             className="hover:underline underline-offset-2"
             target="_blank"
           >
-            <h2 className="my-2 text-left text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
+            <h2 className="my-2 text-left text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold  ">
               {title}
             </h2>
           </Link>
@@ -94,11 +99,11 @@ const projects = () => {
         <title>CodeCents | Projects Page</title>
         <meta name="desription" content="" />
       </Head>
-
+      <TransitionEffect/>
       <main className="w-full mb-16 flex flex-col items-center justify-center">
         <Layout className="pt-16">
           {/* <AnimatedText text="Imagination Trumps Knowledge!"/> */}
-          <h2 className="font-bold  text-8xl mb-16 w-full text-center">
+          <h2 className="font-bold  text-8xl mb-16 w-full text-center dark:text-light">
             Imagination Trumps Knowledge!
           </h2>
           <div className="grid grid-cols-12 gap-24">
